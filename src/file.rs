@@ -1,3 +1,4 @@
+use crate::line::Line;
 pub enum FileType {
     Rust,
     Custom,
@@ -12,27 +13,27 @@ pub struct File {
 }
 
 impl File {
-    pub fn new(path: String, name: String, extension: String, file_type: FileType) -> Self {
-        Self { path: path, name: name, extension: extension, file_type: file_type }
+    pub fn new(path: &str, name: &str, extension: &str, file_type: FileType) -> Self {
+        Self { path: path.to_string(), name: name.to_string(), extension: extension.to_string(), file_type: file_type }
     }
     
-    pub fn Open() {
+    pub fn open() {
         
     }
     
-    pub fn Read() -> String {
-        let full_document = "";
+    pub fn read(&self) -> Vec<Line> {
+        let mut full_document: Vec<Line> = Vec::new();
         
         // TODO
         
-        return full_document.to_string();
+        return full_document;
     }
     
-    pub fn Write(text: String) {
+    pub fn write(text: String) {
         
     }
     
-    pub fn Close() {
+    pub fn close() {
         
     }
 
